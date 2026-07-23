@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CartSummary from '../components/CartSummary.tsx';
+---
+
+<Layout title="Korpa">
+  <section class="relative bg-ink text-white py-20 md:py-24 overflow-hidden -mt-[4.5rem] pt-[4.5rem]">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=1920&q=80"
+        alt="Hrana"
+        class="w-full h-full object-cover opacity-25"
+      />
+      <div class="absolute inset-0 bg-ink/80" />
+    </div>
+    <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+      <p class="font-body text-white/60 text-xs uppercase tracking-[0.2em] mb-3">Vaša porudžbina</p>
+      <h1 class="font-display text-5xl md:text-6xl mb-3">Korpa</h1>
+      <p class="font-body text-white/70 text-lg">Pregledajte i prilagodite vašu porudžbinu</p>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-white">
+    <CartSummary client:load />
+  </section>
+</Layout>

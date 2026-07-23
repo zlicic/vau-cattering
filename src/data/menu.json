@@ -1,0 +1,134 @@
+{
+  "categories": [
+    {
+      "id": "slano",
+      "name": "Slana jela",
+      "subcategories": [
+        {
+          "id": "rostilj",
+          "name": "Roštilj",
+          "items": [
+            {
+              "id": "cevapi",
+              "name": "Ćevapi",
+              "description": "5 komada domaćih ćevapa sa kajmakom i lukom. Tradicionalni recept.",
+              "price": 850,
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "unit": "porcija"
+            },
+            {
+              "id": "pljeskavica",
+              "name": "Pljeskavica",
+              "description": "300g domaće pljeskavice sa sirom. Pržena na bukovom uglju.",
+              "price": 950,
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "unit": "porcija"
+            },
+            {
+              "id": "pileci-batak",
+              "name": "Pileći batak",
+              "description": "Marinirani pileći batak sa začinskim biljem. Soccijan i sočan.",
+              "price": 750,
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "unit": "porcija"
+            }
+          ]
+        },
+        {
+          "id": "sendvici",
+          "name": "Sendviči",
+          "items": [
+            {
+              "id": "club-sendvic",
+              "name": "Club sendvič",
+              "description": "Piletina, slanina, zelena salata, paradajz, majonez. Tri nivoa na pečenoj baget.",
+              "price": 680,
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "unit": "kom"
+            },
+            {
+              "id": "prosciutto-sendvic",
+              "name": "Sendvič sa pršutom",
+              "description": "Pršuta, mozzarella, rukola, paradajz, pesto. Na ciabatti.",
+              "price": 720,
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "unit": "kom"
+            }
+          ]
+        },
+        {
+          "id": "kanapei",
+          "name": "Kanapei",
+          "items": [
+            {
+              "id": "losos-kanape",
+              "name": "Kanape sa dimljenim lososom",
+              "description": "Mini tost, krem sir, dimljeni losos, kapar, limun. Za proslave i korporativne događaje.",
+              "price": 120,
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "unit": "kom"
+            },
+            {
+              "id": "avocado-kanape",
+              "name": "Kanape sa avokadom",
+              "description": "Avokado mousse, cherry paradajz, mikro zelenje. Veganska opcija.",
+              "price": 100,
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "unit": "kom"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slatko",
+      "name": "Slatkiši",
+      "subcategories": [
+        {
+          "id": "torte",
+          "name": "Torte",
+          "items": [
+            {
+              "id": "doboš-torta",
+              "name": "Doboš torta",
+              "description": "Klasična mađarska torta sa 7 slojeva kore i karamel glazurom. Težina 1.2kg.",
+              "price": 3200,
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "unit": "torta"
+            },
+            {
+              "id": "sacher-torta",
+              "name": "Sacher torta",
+              "description": "Bogata čokoladna torta sa marelica džemom. Austrijski klasik.",
+              "price": 2900,
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "unit": "torta"
+            }
+          ]
+        },
+        {
+          "id": "kolaci",
+          "name": "Kolači",
+          "items": [
+            {
+              "id": "medenjaci",
+              "name": "Medenjaci",
+              "description": "Meki medeni kolačići sa medom i začinima. Porcija od 10 komada.",
+              "price": 450,
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "unit": "porcija"
+            },
+            {
+              "id": "krempita",
+              "name": "Krempita",
+              "description": "Hrskavo testo, nežni vanila krem. Prava beogradska klasičarka.",
+              "price": 380,
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "unit": "kom"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

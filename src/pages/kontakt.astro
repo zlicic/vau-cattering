@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { BUSINESS } from '../config/business';
+import { Phone, MapPin, Clock, Mail, Instagram, Facebook, MessageCircle } from 'lucide-react';
+---
+
+<Layout title="Kontakt">
+  <section class="relative bg-ink text-white py-20 md:py-24 overflow-hidden -mt-[4.5rem] pt-[4.5rem]">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80"
+        alt="Restoran"
+        class="w-full h-full object-cover opacity-25"
+      />
+      <div class="absolute inset-0 bg-ink/80" />
+    </div>
+    <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+      <p class="font-body text-white/60 text-xs uppercase tracking-[0.2em] mb-3">Tu smo za vas</p>
+      <h1 class="font-display text-5xl md:text-6xl mb-3">Kontakt</h1>
+      <p class="font-body text-white/70 text-lg">Sva vaša pitanja i porudžbine su dobrodošla</p>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-5 gap-12">
+      <div class="lg:col-span-2 space-y-10">
+        <div>
+          <h2 class="font-display text-2xl text-ink mb-8">Informacije</h2>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-paprika/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Phone size={20} className="text-paprika" strokeWidth={1.5} />
+              </div>
+              <div>
+                <p class="font-body text-xs text-muted uppercase tracking-wider mb-0.5">Telefon</p>
+                <a href={`tel:${BUSINESS.phone}`} class="font-body text-ink hover:text-paprika transition-colors">
+                  {BUSINESS.phone}
+                </a>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <MessageCircle size={20} className="text-gold" strokeWidth={1.5} />
+              </div>
+              <div>
+                <p class="font-body text-xs text-muted uppercase tracking-wider mb-0.5">WhatsApp</p>
+                <a
+                  href={`https://wa.me/${BUSINESS.whatsappNumber}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-body text-ink hover:text-gold transition-colors"
+                >
+                  {BUSINESS.phone}
+                </a>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-sage/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Mail size={20} className="text-sage" strokeWidth={1.5} />
+              </div>
+              <div>
+                <p class="font-body text-xs text-muted uppercase tracking-wider mb-0.5">Email</p>
+                <a href={`mailto:${BUSINESS.email}`} class="font-body text-ink hover:text-sage transition-colors">
+                  {BUSINESS.email}
+                </a>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-paprika/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <MapPin size={20} className="text-paprika" strokeWidth={1.5} />
+              </div>
+              <div>
+                <p class="font-body text-xs text-muted uppercase tracking-wider mb-0.5">Adresa</p>
+                <p class="font-body text-ink">{BUSINESS.address}</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Clock size={20} className="text-gold" strokeWidth={1.5} />
+              </div>
+              <div>
+                <p class="font-body text-xs text-muted uppercase tracking-wider mb-0.5">Radno vreme</p>
+                <p class="font-body text-ink">{BUSINESS.hours}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-lg text-ink mb-4">Društvene mreže</h3>
+          <div class="flex gap-3">
+            <a
+              href={BUSINESS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-11 h-11 bg-surface rounded-xl flex items-center justify-center hover:bg-paprika hover:text-white transition-colors text-ink border border-black/5"
+              aria-label="Instagram"
+            >
+              <Instagram size={18} strokeWidth={1.5} />
+            </a>
+            <a
+              href={BUSINESS.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-11 h-11 bg-surface rounded-xl flex items-center justify-center hover:bg-paprika hover:text-white transition-colors text-ink border border-black/5"
+              aria-label="Facebook"
+            >
+              <Facebook size={18} strokeWidth={1.5} />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3">
+        <h2 class="font-display text-2xl text-ink mb-8">Lokacija</h2>
+        <div class="aspect-video bg-cream rounded-2xl border border-black/5 overflow-hidden">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2808.231!2d19.8335!3d45.2671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDE2JzAxLjYiTiAxOcKwNTAnMDAuNiJF!5e0!3m2!1sen!2srs!4v1"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="VAU Ketering lokacija"
+            class="w-full h-full"
+          ></iframe>
+        </div>
+        <p class="font-body text-xs text-muted mt-3">
+          Ažurirajte Google Maps embed URL sa tačnom adresom vašeg poslovanja.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

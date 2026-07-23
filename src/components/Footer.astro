@@ -1,0 +1,50 @@
+---
+import { BUSINESS } from '../config/business';
+import { Phone, MapPin, Clock, Mail, Instagram, Facebook } from 'lucide-react';
+---
+
+<footer class="bg-ink text-white/70 py-14">
+  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10">
+    <div>
+      <h3 class="font-display text-xl text-white mb-4 tracking-wider">VAU KETERING</h3>
+      <p class="font-body text-sm leading-relaxed text-white/50">
+        Ketering za sve prilike — roštilj, slana jela, torte i kolači za vaše proslave, poslovne ručkove i porodične događaje.
+      </p>
+    </div>
+    <div>
+      <h4 class="font-display text-lg text-white mb-4">Kontakt</h4>
+      <ul class="space-y-3 font-body text-sm">
+        <li class="flex items-center gap-3">
+          <Phone size={16} className="text-paprika flex-shrink-0" strokeWidth={1.5} />
+          <a href={`tel:${BUSINESS.phone}`} class="hover:text-white transition-colors">{BUSINESS.phone}</a>
+        </li>
+        <li class="flex items-center gap-3">
+          <Mail size={16} className="text-paprika flex-shrink-0" strokeWidth={1.5} />
+          <a href={`mailto:${BUSINESS.email}`} class="hover:text-white transition-colors">{BUSINESS.email}</a>
+        </li>
+        <li class="flex items-center gap-3">
+          <MapPin size={16} className="text-paprika flex-shrink-0" strokeWidth={1.5} />
+          <span>{BUSINESS.address}</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <Clock size={16} className="text-paprika flex-shrink-0" strokeWidth={1.5} />
+          <span>{BUSINESS.hours}</span>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display text-lg text-white mb-4">Pratite nas</h4>
+      <div class="flex gap-3">
+        <a href={BUSINESS.instagram} target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-paprika hover:text-white transition-colors" aria-label="Instagram">
+          <Instagram size={18} strokeWidth={1.5} />
+        </a>
+        <a href={BUSINESS.facebook} target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-paprika hover:text-white transition-colors" aria-label="Facebook">
+          <Facebook size={18} strokeWidth={1.5} />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto px-4 mt-10 pt-8 border-t border-white/5 text-center font-body text-xs text-white/20">
+    © {new Date().getFullYear()} VAU Ketering. Sva prava zadržana.
+  </div>
+</footer>
