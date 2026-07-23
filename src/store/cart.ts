@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-// type for cart item
 export interface CartItem {
   id: string;
   name: string;
