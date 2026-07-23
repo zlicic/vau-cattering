@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 import { useCartStore } from '../store/cart';
 
+const BASE = import.meta.env.BASE_URL;
+
 const navLinks = [
-  { href: '/', label: 'Početna' },
-  { href: '/o-nama', label: 'O nama' },
-  { href: '/ponuda', label: 'Ponuda' },
-  { href: '/kontakt', label: 'Kontakt' },
+  { href: BASE, label: 'Početna' },
+  { href: `${BASE}o-nama`, label: 'O nama' },
+  { href: `${BASE}ponuda`, label: 'Ponuda' },
+  { href: `${BASE}kontakt`, label: 'Kontakt' },
 ];
 
 export default function Header() {
@@ -36,7 +38,7 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-4 h-18 flex items-center justify-between">
         <a
-          href="/"
+          href={BASE}
           className={`font-display text-2xl font-bold tracking-widest ${logoClass} hover:opacity-80 transition-opacity`}
         >
           VAU KETERING
@@ -54,7 +56,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="/korpa"
+            href={`${BASE}korpa`}
             className={`relative p-2 ${textClass} hover:text-paprika transition-colors`}
             aria-label="Korpa"
           >
@@ -69,7 +71,7 @@ export default function Header() {
 
         <div className="flex md:hidden items-center gap-4">
           <a
-            href="/korpa"
+            href={`${BASE}korpa`}
             className={`relative p-2 ${textClass}`}
             aria-label="Korpa"
           >

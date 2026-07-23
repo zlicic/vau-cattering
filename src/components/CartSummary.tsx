@@ -33,7 +33,7 @@ export default function CartSummary() {
         <h2 className="font-display text-2xl text-ink mb-2">Korpa je prazna</h2>
         <p className="font-body text-muted mb-6">Dodajte jela iz ponude da biste napravili porudžbinu.</p>
         <a
-          href="/ponuda"
+          href={`${import.meta.env.BASE_URL}ponuda`}
           className="inline-flex items-center gap-2 px-6 py-3 bg-paprika text-white font-display uppercase tracking-widest rounded-xl hover:bg-paprika-dark transition-colors"
         >
           Pogledaj ponudu
@@ -102,7 +102,7 @@ export default function CartSummary() {
       </div>
 
       <a
-        href="/porudzbina"
+        href={`${import.meta.env.BASE_URL}porudzbina`}
         className="block w-full py-4 px-6 bg-paprika text-white font-display text-lg uppercase tracking-widest text-center rounded-xl hover:bg-paprika-dark transition-colors shadow-lg shadow-paprika/15"
       >
         Nastavi na porudžbinu
