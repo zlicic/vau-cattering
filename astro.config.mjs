@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://zlicic.github.io',
-  base: '/vau-cattering',
+  base: '/vau-cattering/',
   integrations: [react()],
 
   vite: {

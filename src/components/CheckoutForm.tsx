@@ -4,13 +4,15 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { orderSchema, type OrderFormData } from '../schemas/order';
 import { useCartStore } from '../store/cart';
 import { BUSINESS } from '../config/business';
-import { ShoppingCart, AlertCircle, ArrowRight } from 'lucide-react';
+import { ShoppingCart, AlertCircle, ArrowRight, MessageCircle, Mail, Phone, X } from 'lucide-react';
 
 export default function CheckoutForm() {
   const items = useCartStore((state) => state.items);
   const totalPrice = useCartStore((state) => state.totalPrice());
   const clearCart = useCartStore((state) => state.clearCart);
   const [mounted, setMounted] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [orderMessage, setOrderMessage] = useState('');
 
   const {
     register,
@@ -44,8 +46,8 @@ export default function CheckoutForm() {
         <h2 className="font-display text-2xl text-ink mb-2">Korpa je prazna</h2>
         <p className="font-body text-muted mb-6">Dodajte jela pre nego što nastavite.</p>
         <a
-          href="/ponuda"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-paprika text-white font-display uppercase tracking-widest rounded-xl hover:bg-paprika-dark transition-colors"
+          href={`${import.meta.env.BASE_URL}ponuda`}
+          className="inline-flex items-center gap-2 px-6 py-3 bg-burgundy text-white font-display uppercase tracking-widest rounded-xl hover:bg-burgundy-dark transition-colors"
         >
           Pogledaj ponudu
         </a>
@@ -53,7 +55,7 @@ export default function CheckoutForm() {
     );
   }
 
-  const onSubmit = (data: OrderFormData) => {
+  const buildMessage = (data: OrderFormData) => {
     const lines = [
       `VAU Ketering - Nova porudžbina`,
       ``,
@@ -78,11 +80,29 @@ export default function CheckoutForm() {
     lines.push(``);
     lines.push(`Ukupno: ${totalPrice.toLocaleString('sr-RS')} RSD`);
 
-    const message = encodeURIComponent(lines.join('\n'));
-    const url = `https://wa.me/${BUSINESS.whatsappNumber}?text=${message}`;
+    return lines.join('\n');
+  };
 
+  const onSubmit = (data: OrderFormData) => {
+    const message = buildMessage(data);
+    setOrderMessage(message);
+    setShowModal(true);
+  };
+
+  const handleWhatsApp = () => {
+    const url = `https://wa.me/${BUSINESS.whatsappNumber}?text=${encodeURIComponent(orderMessage)}`;
     clearCart();
-    window.location.href = url;
+    window.open(url, '_blank');
+  };
+
+  const handleEmail = () => {
+    const subject = encodeURIComponent('VAU Ketering - Nova porudžbina');
+    const body = encodeURIComponent(orderMessage);
+    window.location.href = `mailto:${BUSINESS.email}?subject=${subject}&body=${body}`;
+  };
+
+  const handleCall = () => {
+    window.location.href = `tel:${BUSINESS.phone}`;
   };
 
   return (
@@ -104,7 +124,7 @@ export default function CheckoutForm() {
         </div>
         <div className="border-t border-black/5 pt-3 flex items-center justify-between">
           <span className="font-display text-lg text-ink">Ukupno</span>
-          <span className="font-display text-xl text-paprika">{totalPrice.toLocaleString('sr-RS')} RSD</span>
+          <span className="font-display text-xl text-burgundy">{totalPrice.toLocaleString('sr-RS')} RSD</span>
         </div>
       </div>
 
@@ -118,11 +138,11 @@ export default function CheckoutForm() {
             id="name"
             type="text"
             {...register('name')}
-            className="w-full px-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-paprika/20 focus:border-paprika/20 transition-all"
+            className="w-full px-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-burgundy/20 focus:border-burgundy/20 transition-all"
             placeholder="Unesite vaše ime"
           />
           {errors.name && (
-            <p className="mt-1.5 flex items-center gap-1 font-body text-xs text-paprika">
+            <p className="mt-1.5 flex items-center gap-1 font-body text-xs text-burgundy">
               <AlertCircle size={14} /> {errors.name.message}
             </p>
           )}
@@ -136,11 +156,11 @@ export default function CheckoutForm() {
             id="address"
             type="text"
             {...register('address')}
-            className="w-full px-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-paprika/20 focus:border-paprika/20 transition-all"
+            className="w-full px-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-burgundy/20 focus:border-burgundy/20 transition-all"
             placeholder="Unesite adresu"
           />
           {errors.address && (
-            <p className="mt-1.5 flex items-center gap-1 font-body text-xs text-paprika">
+            <p className="mt-1.5 flex items-center gap-1 font-body text-xs text-burgundy">
               <AlertCircle size={14} /> {errors.address.message}
             </p>
           )}
@@ -154,11 +174,11 @@ export default function CheckoutForm() {
             id="phone"
             type="tel"
             {...register('phone')}
-            className="w-full px-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-paprika/20 focus:border-paprika/20 transition-all"
+            className="w-full px-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-burgundy/20 focus:border-burgundy/20 transition-all"
             placeholder="06x/xxx-xxxx"
           />
           {errors.phone && (
-            <p className="mt-1.5 flex items-center gap-1 font-body text-xs text-paprika">
+            <p className="mt-1.5 flex items-center gap-1 font-body text-xs text-burgundy">
               <AlertCircle size={14} /> {errors.phone.message}
             </p>
           )}
@@ -173,7 +193,7 @@ export default function CheckoutForm() {
               id="companyName"
               type="text"
               {...register('companyName')}
-              className="w-full px-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-paprika/20 focus:border-paprika/20 transition-all"
+              className="w-full px-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-burgundy/20 focus:border-burgundy/20 transition-all"
               placeholder="Opciono"
             />
           </div>
@@ -185,7 +205,7 @@ export default function CheckoutForm() {
               id="companyId"
               type="text"
               {...register('companyId')}
-              className="w-full px-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-paprika/20 focus:border-paprika/20 transition-all"
+              className="w-full px-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-burgundy/20 focus:border-burgundy/20 transition-all"
               placeholder="Opciono"
             />
           </div>
@@ -193,16 +213,70 @@ export default function CheckoutForm() {
 
         <button
           type="submit"
-          className="w-full py-4 px-6 bg-paprika text-white font-display text-lg uppercase tracking-widest rounded-xl hover:bg-paprika-dark transition-colors flex items-center justify-center gap-2 shadow-lg shadow-paprika/15"
+          className="w-full py-4 px-6 bg-burgundy text-white font-display text-lg uppercase tracking-widest rounded-xl hover:bg-burgundy-dark transition-colors flex items-center justify-center gap-2 shadow-lg shadow-burgundy/15"
         >
           <ArrowRight size={20} />
-          Pošalji porudžbinu preko WhatsApp-a
+          Završi porudžbinu
         </button>
 
         <p className="font-body text-xs text-muted text-center">
-          Klikom na dugme biće te preusmereni na WhatsApp sa unapred popunjenom porukom.
+          Bićete preusmereni na WhatsApp ili možete kopirati porudžbinu i pozvati nas.
         </p>
       </form>
+
+      {/* Confirmation modal */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-display text-xl text-ink">Vaša porudžbina je spremna</h3>
+              <button
+                onClick={() => setShowModal(false)}
+                className="p-2 rounded-lg hover:bg-cream transition-colors"
+                aria-label="Zatvori"
+              >
+                <X size={20} className="text-muted" />
+              </button>
+            </div>
+
+            <p className="font-body text-sm text-muted mb-4">
+              Izaberite način slanja. Ako nemate WhatsApp na ovom uređaju, pošaljite email ili pozovite nas.
+            </p>
+
+            <div className="bg-surface rounded-xl p-4 mb-5 border border-black/5">
+              <pre className="font-body text-xs text-ink whitespace-pre-wrap break-words max-h-48 overflow-y-auto">
+                {orderMessage}
+              </pre>
+            </div>
+
+            <div className="space-y-3">
+              <button
+                onClick={handleWhatsApp}
+                className="w-full py-3.5 px-4 bg-[#25D366] text-white font-display text-sm uppercase tracking-widest rounded-xl hover:bg-[#1ebe5a] transition-colors flex items-center justify-center gap-2"
+              >
+                <MessageCircle size={18} />
+                Otvori u WhatsApp-u
+              </button>
+
+              <button
+                onClick={handleEmail}
+                className="w-full py-3.5 px-4 bg-surface border border-black/10 text-ink font-display text-sm uppercase tracking-widest rounded-xl hover:bg-cream transition-colors flex items-center justify-center gap-2"
+              >
+                <Mail size={18} />
+                Pošalji email
+              </button>
+
+              <button
+                onClick={handleCall}
+                className="w-full py-3.5 px-4 bg-burgundy text-white font-display text-sm uppercase tracking-widest rounded-xl hover:bg-burgundy-dark transition-colors flex items-center justify-center gap-2"
+              >
+                <Phone size={18} />
+                Pozovi nas ({BUSINESS.phone})
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

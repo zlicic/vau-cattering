@@ -30,7 +30,7 @@ export const useCartStore = create<CartState>()(
           if (existing) {
             return {
               items: state.items.map((i) =>
-                i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+                i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i,
               ),
             };
           }
@@ -47,7 +47,7 @@ export const useCartStore = create<CartState>()(
           }
           return {
             items: state.items.map((i) =>
-              i.id === id ? { ...i, quantity } : i
+              i.id === id ? { ...i, quantity } : i,
             ),
           };
         }),
@@ -58,6 +58,6 @@ export const useCartStore = create<CartState>()(
     }),
     {
       name: 'vau-cart',
-    }
-  )
+    },
+  ),
 );

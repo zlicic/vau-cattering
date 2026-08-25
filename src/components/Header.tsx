@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 import { useCartStore } from '../store/cart';
 
+const BASE = import.meta.env.BASE_URL;
+
 const navLinks = [
-  { href: '/', label: 'Početna' },
-  { href: '/o-nama', label: 'O nama' },
-  { href: '/ponuda', label: 'Ponuda' },
-  { href: '/kontakt', label: 'Kontakt' },
+  { href: BASE, label: 'Početna' },
+  { href: `${BASE}o-nama`, label: 'O nama' },
+  { href: `${BASE}ponuda`, label: 'Ponuda' },
+  { href: `${BASE}kontakt`, label: 'Kontakt' },
 ];
 
 export default function Header() {
@@ -28,54 +30,54 @@ export default function Header() {
     : 'bg-transparent';
 
   const textClass = scrolled ? 'text-ink' : 'text-white';
-  const logoClass = scrolled ? 'text-paprika' : 'text-white';
+  const logoClass = scrolled ? 'text-burgundy' : 'text-white';
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${bgClass}`}
     >
-      <div className="max-w-6xl mx-auto px-4 h-18 flex items-center justify-between">
+      <div className='max-w-6xl mx-auto px-4 h-18 flex items-center justify-between'>
         <a
-          href="/"
+          href={BASE}
           className={`font-display text-2xl font-bold tracking-widest ${logoClass} hover:opacity-80 transition-opacity`}
         >
           VAU KETERING
         </a>
 
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className='hidden md:flex items-center gap-10'>
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`font-body text-sm font-medium ${textClass} hover:text-paprika transition-colors uppercase tracking-widest relative group`}
+              className={`font-body text-sm font-medium ${textClass} hover:text-burgundy transition-colors uppercase tracking-widest relative group`}
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paprika transition-all duration-300 group-hover:w-full" />
+              <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-burgundy transition-all duration-300 group-hover:w-full' />
             </a>
           ))}
           <a
-            href="/korpa"
-            className={`relative p-2 ${textClass} hover:text-paprika transition-colors`}
-            aria-label="Korpa"
+            href={`${BASE}korpa`}
+            className={`relative p-2 ${textClass} hover:text-burgundy transition-colors`}
+            aria-label='Korpa'
           >
             <ShoppingCart size={22} strokeWidth={1.5} />
             {mounted && totalItems > 0 && (
-              <span className="absolute -top-1 -right-1 bg-paprika text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
+              <span className='absolute -top-1 -right-1 bg-burgundy text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center'>
                 {totalItems}
               </span>
             )}
           </a>
         </nav>
 
-        <div className="flex md:hidden items-center gap-4">
+        <div className='flex md:hidden items-center gap-4'>
           <a
-            href="/korpa"
+            href={`${BASE}korpa`}
             className={`relative p-2 ${textClass}`}
-            aria-label="Korpa"
+            aria-label='Korpa'
           >
             <ShoppingCart size={22} strokeWidth={1.5} />
             {mounted && totalItems > 0 && (
-              <span className="absolute -top-1 -right-1 bg-paprika text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
+              <span className='absolute -top-1 -right-1 bg-burgundy text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center'>
                 {totalItems}
               </span>
             )}
@@ -83,7 +85,7 @@ export default function Header() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={`p-2 ${textClass}`}
-            aria-label="Meni"
+            aria-label='Meni'
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -91,13 +93,13 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <nav className="md:hidden bg-white/98 backdrop-blur-md border-t border-black/5 px-4 py-6 flex flex-col gap-4 shadow-lg">
+        <nav className='md:hidden bg-white/98 backdrop-blur-md border-t border-black/5 px-4 py-6 flex flex-col gap-4 shadow-lg'>
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="font-body text-sm font-medium text-ink hover:text-paprika transition-colors uppercase tracking-widest py-2"
+              className='font-body text-sm font-medium text-ink hover:text-burgundy transition-colors uppercase tracking-widest py-2'
             >
               {link.label}
             </a>
