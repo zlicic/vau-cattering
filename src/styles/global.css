@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-base: #FFFFFF;
-  --color-surface: #FAFAF9;
-  --color-cream: #F5F5F0;
-  --color-paprika: #DC2626;
-  --color-paprika-dark: #B91C1C;
-  --color-gold: #D97706;
-  --color-gold-dark: #B45309;
-  --color-sage: #059669;
-  --color-sage-dark: #047857;
-  --color-ink: #1C1917;
-  --color-ink-light: #44403C;
-  --color-muted: #A8A29E;
-  --color-walnut: #3D2314;
-  --color-wood: #5C4033;
+  --color-base: #FAF7EF;
+  --color-surface: #EDE7D3;
+  --color-cream: #E2D8B7;
+  --color-burgundy: #4F2B40;
+  --color-burgundy-dark: #3D1F32;
+  --color-gold: #C3A25F;
+  --color-gold-dark: #A68A4D;
+  --color-sage: #C3A25F;
+  --color-sage-dark: #A68A4D;
+  --color-ink: #2C1B26;
+  --color-ink-light: #5C4A52;
+  --color-muted: #9E9588;
+  --color-walnut: #2C1B26;
+  --color-wood: #3D1F32;
 
   --font-display: 'Oswald', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -39,14 +39,18 @@
   to   { opacity: 1; transform: translateX(0); }
 }
 
+a, button, [role="button"], input[type="submit"] {
+  cursor: pointer;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #FFFFFF;
-  color: #1C1917;
+  background-color: #FAF7EF;
+  color: #2C1B26;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

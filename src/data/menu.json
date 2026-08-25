@@ -1,130 +1,394 @@
 {
   "categories": [
     {
-      "id": "slano",
-      "name": "Slana jela",
+      "id": "ketering-zalogaji",
+      "name": "Ketering zalogaji",
       "subcategories": [
         {
-          "id": "rostilj",
-          "name": "Roštilj",
+          "id": "mini-specijaliteti",
+          "name": "Mini specijaliteti",
           "items": [
             {
-              "id": "cevapi",
-              "name": "Ćevapi",
-              "description": "5 komada domaćih ćevapa sa kajmakom i lukom. Tradicionalni recept.",
-              "price": 850,
+              "id": "kiflice-sunka-sir",
+              "name": "Kiflice (šunka, sir)",
+              "description": "Hrskave domaće kiflice punjene šunkom i sirom. Idealne za proslave i finger food.",
+              "price": 1400,
+              "unit": "kg",
               "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
-              "unit": "porcija"
+              "tags": ["popularno"]
             },
             {
-              "id": "pljeskavica",
-              "name": "Pljeskavica",
-              "description": "300g domaće pljeskavice sa sirom. Pržena na bukovom uglju.",
-              "price": 950,
-              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
-              "unit": "porcija"
+              "id": "mini-pice-sunka-sir",
+              "name": "Mini pice (šunka, sir)",
+              "description": "Male pizze sa šunkom i sirom. Omiljene na svim proslavama.",
+              "price": 1700,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671771/mini_pice_jgkd10.jpg",
+              "tags": ["popularno"]
             },
             {
-              "id": "pileci-batak",
-              "name": "Pileći batak",
-              "description": "Marinirani pileći batak sa začinskim biljem. Soccijan i sočan.",
-              "price": 750,
+              "id": "sendvicici-sunka-kulen",
+              "name": "Sendvičići (šunka, kulen)",
+              "description": "Mini sendviči sa šunkom i kulenom. Praktični i ukusni zalogaj.",
+              "price": 1600,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671780/sendvicici_l3v7xb.jpg"
+            },
+            {
+              "id": "mini-burgeri-sir",
+              "name": "Mini burgeri sa sirom",
+              "description": "Sočni mini burgeri sa sirom. Pravi izbor za goste svih uzrasta.",
+              "price": 2100,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg"
+            },
+            {
+              "id": "fiseci-sunka-krem-sir",
+              "name": "Fišeci sa šunkom i krem sirom",
+              "description": "Testo punjeno šunkom i krem sirom. Lagani i kremasti zalogaj.",
+              "price": 1600,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671771/fiseci_sa_sunkom_i_krem_sirom_hugecl.jpg"
+            },
+            {
+              "id": "mini-hotdog-virsla",
+              "name": "Mini hotdog (viršla)",
+              "description": "Mini hotdog sa viršlom. Klasika koja se uvek traži.",
+              "price": 1500,
+              "unit": "kg",
               "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
-              "unit": "porcija"
+              "tags": ["popularno"]
+            },
+            {
+              "id": "mini-hotdog-kobasica",
+              "name": "Mini hotdog (kobasica)",
+              "description": "Mini hotdog sa domaćom kobasicom. Bogatiji ukus za izbor.",
+              "price": 2000,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg"
+            },
+            {
+              "id": "pohovana-palacinka-mes",
+              "name": "Pohovana palačinka punjena mesom",
+              "description": "Hrskava pohovana palačinka punjena mesom. Neodoljivo hrskava.",
+              "price": 2200,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg"
             }
           ]
         },
         {
-          "id": "sendvici",
-          "name": "Sendviči",
+          "id": "tortilje-wrap",
+          "name": "Tortilje i wrap",
           "items": [
             {
-              "id": "club-sendvic",
-              "name": "Club sendvič",
-              "description": "Piletina, slanina, zelena salata, paradajz, majonez. Tri nivoa na pečenoj baget.",
-              "price": 680,
-              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
-              "unit": "kom"
+              "id": "tortilja-sunka",
+              "name": "Tortilja sa šunkom",
+              "description": "Tortilja punjena šunkom. Klasik među zalogajima.",
+              "price": 1850,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671783/tortilja_sa_sunkom_mizitx.jpg"
             },
             {
-              "id": "prosciutto-sendvic",
-              "name": "Sendvič sa pršutom",
-              "description": "Pršuta, mozzarella, rukola, paradajz, pesto. Na ciabatti.",
-              "price": 720,
-              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
-              "unit": "kom"
+              "id": "tortilja-kulen",
+              "name": "Tortilja sa kulenom",
+              "description": "Tortilja sa kulenom i dodacima. Pikantniji izbor.",
+              "price": 2050,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg"
+            },
+            {
+              "id": "tortilja-pecenica-krem-sir",
+              "name": "Tortilja pečenica i krem sir",
+              "description": "Tortilja sa pečenicom i krem sirom. Kremasta i sočna kombinacija.",
+              "price": 2100,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg"
+            },
+            {
+              "id": "tortilja-dimljena-piletina",
+              "name": "Tortilja sa dimljenom piletinom",
+              "description": "Tortilja sa dimljenom piletinom. Bogat ukus i tekstura.",
+              "price": 2250,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg"
+            },
+            {
+              "id": "mini-wrap-poh-piletina",
+              "name": "Mini wrap sa pohovanom piletinom",
+              "description": "Mini wrap sa hrskavom pohovanom piletinom. Savršen zalogaj.",
+              "price": 2400,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg"
             }
           ]
         },
         {
-          "id": "kanapei",
-          "name": "Kanapei",
+          "id": "takosi",
+          "name": "Takosi",
           "items": [
             {
-              "id": "losos-kanape",
-              "name": "Kanape sa dimljenim lososom",
-              "description": "Mini tost, krem sir, dimljeni losos, kapar, limun. Za proslave i korporativne događaje.",
-              "price": 120,
-              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
-              "unit": "kom"
+              "id": "mini-takosi-ml-meso",
+              "name": "Mini takosi sa mlevenim mesom",
+              "description": "Mini takosi sa mlevenim mesom i meksičkim začinima.",
+              "price": 2300,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671772/mini_takosi_sa_mlevenim_mesom_qrtkve.jpg"
             },
             {
-              "id": "avocado-kanape",
-              "name": "Kanape sa avokadom",
-              "description": "Avokado mousse, cherry paradajz, mikro zelenje. Veganska opcija.",
-              "price": 100,
+              "id": "mini-takosi-piletina",
+              "name": "Mini takosi sa piletinom",
+              "description": "Mini takosi sa piletinom. Lagana alternativa sa puno ukusa.",
+              "price": 2200,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg"
+            },
+            {
+              "id": "takitosi-piletina",
+              "name": "Takitosi sa piletinom",
+              "description": "Takitosi sa piletinom. Hrskavi zalogaj sa meksičkim šmekom.",
+              "price": 2100,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671781/takitosi_sa_piletinom_uvr08q.jpg"
+            },
+            {
+              "id": "takitosi-sir",
+              "name": "Takitosi sa sirom",
+              "description": "Takitosi sa sirom. Vegetarijanska opcija punog ukusa.",
+              "price": 1650,
+              "unit": "kg",
               "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
-              "unit": "kom"
+              "tags": ["vegetarijansko"]
+            }
+          ]
+        },
+        {
+          "id": "pite-projice",
+          "name": "Pite i projice",
+          "items": [
+            {
+              "id": "mini-projice-sir",
+              "name": "Mini projice sa sirom",
+              "description": "Male projice sa sirom. Domaći specijalitet u zalogaju.",
+              "price": 1250,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "tags": ["vegetarijansko"]
+            },
+            {
+              "id": "pita-sir",
+              "name": "Pita sa sirom",
+              "description": "Pita sa sirom. Klasik domaće kuhinje.",
+              "price": 1450,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671777/pita_sa_sirom_npqyzz.jpg",
+              "tags": ["vegetarijansko"]
+            },
+            {
+              "id": "pita-mes",
+              "name": "Pita sa mesom",
+              "description": "Pita sa mesom. Sočna i bogata.",
+              "price": 1700,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671775/pita_sa_mesom_gcn9cp.jpg"
+            },
+            {
+              "id": "pita-krompir",
+              "name": "Pita sa krompirom",
+              "description": "Pita sa krompirom. Jednostavna i ukusna opcija.",
+              "price": 1350,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671773/pita_sa_krompirom_whpkw8.jpg",
+              "tags": ["vegetarijansko"]
+            },
+            {
+              "id": "pita-sampinjoni",
+              "name": "Pita sa šampinjonima",
+              "description": "Pita sa šampinjonima. Aromatična vegetarijanska opcija.",
+              "price": 1650,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671776/pita_sa_sampinjonima_pruab9.jpg",
+              "tags": ["vegetarijansko"]
+            }
+          ]
+        },
+        {
+          "id": "rolati-kanapei",
+          "name": "Rolati i kanapei",
+          "items": [
+            {
+              "id": "slani-rolat-sunka",
+              "name": "Slani rolat sa šunkom",
+              "description": "Slani rolat sa šunkom i krem sirom. Elegantna poslastica.",
+              "price": 1850,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671781/slani_rolat_sa_sunkom_m1vz6v.jpg"
+            },
+            {
+              "id": "slani-rolat-kulen",
+              "name": "Slani rolat sa kulenom",
+              "description": "Slani rolat sa kulenom. Pikantniji rolat za izbor.",
+              "price": 1950,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671779/slani_rolat_sa_kulenom_at0iv0.jpg"
+            },
+            {
+              "id": "kanapei-mix",
+              "name": "Kanapei mix",
+              "description": "Miks kanapea sa šunkom, kulenom, pečenicom i pršutom. Za rafiniran ukus.",
+              "price": 2100,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671775/kanapei_mix_zpdhxv.jpg",
+              "tags": ["premium"]
+            }
+          ]
+        },
+        {
+          "id": "plata-kompleti",
+          "name": "Plata i kompleti",
+          "items": [
+            {
+              "id": "miks-suhomesnatog",
+              "name": "Miks suhomesnatog",
+              "description": "Selekcija suhomesnatih delicija. Bogata plata za prave gurmane.",
+              "price": 2900,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671776/mix_suhomesnatog_psi2lp.jpg",
+              "tags": ["premium"]
+            },
+            {
+              "id": "selekcija-sira",
+              "name": "Selekcija sira",
+              "description": "Bogata selekcija sireva. Savršen dodatak uz vino i društvo.",
+              "price": 3600,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671778/selekcija_sira_kcer5g.jpg",
+              "tags": ["premium"]
+            },
+            {
+              "id": "miks-suhomesnato-sir",
+              "name": "Miks suhomesnato sa sirom",
+              "description": "Kombinacija suhomesnatog i sireva. Dvostruko uživanje na platou.",
+              "price": 3400,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671771/miks_suhomesnato_sa_sirom_kubdgv.jpg",
+              "tags": ["premium"]
+            },
+            {
+              "id": "vocni-oval",
+              "name": "Voćni oval",
+              "description": "Svež voćni oval. Ukusan, dekorativan i osvežavajući dodatak.",
+              "price": 5800,
+              "unit": "kom",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671785/vocni_oval_zx0nv9.jpg",
+              "tags": ["premium"]
+            },
+            {
+              "id": "miks-zalogaja-5-7",
+              "name": "Miks zalogaja za 5 do 7 osoba",
+              "description": "Praktičan miks zalogaja za 5 do 7 osoba. Idealno za manje proslave.",
+              "price": 2500,
+              "unit": "kom",
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "tags": ["komplet"]
+            },
+            {
+              "id": "miks-kolaca-6-8",
+              "name": "Miks kolača za 6 do 8 osoba",
+              "description": "Slatki miks kolača za 6 do 8 osoba. Savršen završetak proslave.",
+              "price": 3500,
+              "unit": "kom",
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "tags": ["komplet"]
             }
           ]
         }
       ]
     },
     {
-      "id": "slatko",
-      "name": "Slatkiši",
+      "id": "deciji-rodjendani",
+      "name": "Dečiji rođendani",
       "subcategories": [
         {
-          "id": "torte",
-          "name": "Torte",
+          "id": "slani-deciji",
+          "name": "Slani zalogaji",
           "items": [
             {
-              "id": "doboš-torta",
-              "name": "Doboš torta",
-              "description": "Klasična mađarska torta sa 7 slojeva kore i karamel glazurom. Težina 1.2kg.",
-              "price": 3200,
+              "id": "mini-pice-deciji",
+              "name": "Mini pice",
+              "description": "Male pizze sa šunkom i sirom. Uvek hit među decom.",
+              "price": 1700,
+              "unit": "kg",
               "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
-              "unit": "torta"
+              "tags": ["deciji-favorit", "popularno"]
             },
             {
-              "id": "sacher-torta",
-              "name": "Sacher torta",
-              "description": "Bogata čokoladna torta sa marelica džemom. Austrijski klasik.",
-              "price": 2900,
+              "id": "kiflice-deciji",
+              "name": "Kiflice",
+              "description": "Hrskave kiflice punjene šunkom i sirom. Voli ih svako dete.",
+              "price": 1400,
+              "unit": "kg",
               "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
-              "unit": "torta"
+              "tags": ["deciji-favorit"]
+            },
+            {
+              "id": "sendvicici-deciji",
+              "name": "Sendvičići",
+              "description": "Mini sendviči sa šunkom i kulenom. Praktični i ukusni.",
+              "price": 1600,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg"
+            },
+            {
+              "id": "mini-hotdog-deciji",
+              "name": "Mini hotdog",
+              "description": "Mini hotdog sa viršlom. Klasik koji deca obožavaju.",
+              "price": 1500,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "tags": ["deciji-favorit", "popularno"]
             }
           ]
         },
         {
-          "id": "kolaci",
-          "name": "Kolači",
+          "id": "slatki-deciji",
+          "name": "Slatki zalogaji",
           "items": [
             {
-              "id": "medenjaci",
-              "name": "Medenjaci",
-              "description": "Meki medeni kolačići sa medom i začinima. Porcija od 10 komada.",
-              "price": 450,
+              "id": "popsi",
+              "name": "Popsi",
+              "description": "Osvежavajući popsi. Omiljen među decom na svim rođendanima.",
+              "price": 150,
+              "unit": "kom",
               "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
-              "unit": "porcija"
+              "tags": ["deciji-favorit"]
             },
             {
-              "id": "krempita",
-              "name": "Krempita",
-              "description": "Hrskavo testo, nežni vanila krem. Prava beogradska klasičarka.",
-              "price": 380,
+              "id": "popsi-sladoled",
+              "name": "Popsi sladoled",
+              "description": "Sladoled popsi. Slatko osveženje koje deca vole.",
+              "price": 180,
+              "unit": "kg",
               "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
-              "unit": "kom"
+              "tags": ["deciji-favorit"]
+            },
+            {
+              "id": "mini-krofnice",
+              "name": "Mini krofnice",
+              "description": "Male slatke krofnice. Savršen slatki zalogaj za proslavu.",
+              "price": 60,
+              "unit": "kom",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671773/mini_krofnice_bqxabj.jpg"
+            },
+            {
+              "id": "torte-deciji",
+              "name": "Torte",
+              "description": "Torte po izboru. Ukusne i dekorativne, pravi centralni deo proslave.",
+              "price": 2200,
+              "unit": "kg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671785/torte_qq3bqj.jpg",
+              "tags": ["premium"],
+              "note": "Cena ne uključuje dekoraciju. Dekoracija po izboru se dodatno naplaćuje."
             }
           ]
         }

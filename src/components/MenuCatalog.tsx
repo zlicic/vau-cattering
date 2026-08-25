@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Plus, Search } from 'lucide-react';
+import { cloudinaryUrl } from '../lib/cloudinary';
 import MenuModal from './MenuModal';
 
 interface MenuItem {
@@ -9,6 +10,9 @@ interface MenuItem {
   price: number;
   image: string;
   unit: string;
+  tags?: string[];
+  allergens?: string[];
+  note?: string;
   categoryId: string;
   categoryName: string;
   subcategoryId: string;
@@ -75,7 +79,7 @@ export default function MenuCatalog({ items, categories }: MenuCatalogProps) {
           placeholder="Pretraži ponudu..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-11 pr-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-paprika/20 focus:border-paprika/20 transition-all"
+          className="w-full pl-11 pr-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-burgundy/20 focus:border-burgundy/20 transition-all"
         />
       </div>
 
@@ -88,13 +92,13 @@ export default function MenuCatalog({ items, categories }: MenuCatalogProps) {
               onClick={() => handleCategoryChange(tab.id)}
               className={`relative px-5 py-3 font-display text-sm uppercase tracking-wider whitespace-nowrap transition-colors ${
                 activeCategory === tab.id
-                  ? 'text-paprika'
+                  ? 'text-burgundy'
                   : 'text-muted hover:text-ink'
               }`}
             >
               {tab.name}
               {activeCategory === tab.id && (
-                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-paprika rounded-full" />
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-burgundy rounded-full" />
               )}
             </button>
           ))}
@@ -108,7 +112,7 @@ export default function MenuCatalog({ items, categories }: MenuCatalogProps) {
             onClick={() => setActiveSubcategory('all')}
             className={`px-3 py-1.5 rounded-lg font-body text-xs font-medium transition-colors ${
               activeSubcategory === 'all'
-                ? 'bg-ink text-white'
+                ? 'bg-burgundy text-white'
                 : 'bg-surface text-ink-light hover:bg-cream'
             }`}
           >
@@ -120,7 +124,7 @@ export default function MenuCatalog({ items, categories }: MenuCatalogProps) {
               onClick={() => setActiveSubcategory(sub.id)}
               className={`px-3 py-1.5 rounded-lg font-body text-xs font-medium transition-colors ${
                 activeSubcategory === sub.id
-                  ? 'bg-ink text-white'
+                  ? 'bg-burgundy text-white'
                   : 'bg-surface text-ink-light hover:bg-cream'
               }`}
             >
@@ -150,7 +154,7 @@ export default function MenuCatalog({ items, categories }: MenuCatalogProps) {
             >
               <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-lg overflow-hidden bg-cream flex-shrink-0">
                 <img
-                  src={item.image}
+                  src={cloudinaryUrl(item.image, 400)}
                   alt={item.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
@@ -159,11 +163,12 @@ export default function MenuCatalog({ items, categories }: MenuCatalogProps) {
               <div className="flex-1 min-w-0 flex flex-col justify-between py-1">
                 <div>
                   <div className="flex items-start justify-between gap-3 mb-1">
-                    <h3 className="font-display text-lg text-ink leading-tight group-hover:text-paprika transition-colors">
+                    <h3 className="font-display text-lg text-ink leading-tight group-hover:text-burgundy transition-colors">
                       {item.name}
                     </h3>
-                    <span className="font-display text-lg text-paprika whitespace-nowrap">
+                    <span className="font-display text-lg text-burgundy whitespace-nowrap">
                       {item.price.toLocaleString('sr-RS')} RSD
+                      <span className="text-sm text-muted font-body"> /{item.unit}</span>
                     </span>
                   </div>
                   <p className="font-body text-xs text-muted mb-2 uppercase tracking-wide">
@@ -173,16 +178,13 @@ export default function MenuCatalog({ items, categories }: MenuCatalogProps) {
                     {item.description}
                   </p>
                 </div>
-                <div className="flex items-center justify-between mt-3">
-                  <span className="font-body text-[10px] text-muted uppercase tracking-widest">
-                    po {item.unit}
-                  </span>
+                <div className="flex items-center justify-end mt-3">
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       setModalItem(item);
                     }}
-                    className="w-9 h-9 rounded-full bg-paprika text-white flex items-center justify-center hover:bg-paprika-dark transition-colors shadow-sm"
+                    className="w-9 h-9 rounded-full bg-burgundy text-white flex items-center justify-center hover:bg-burgundy-dark transition-colors shadow-sm"
                     aria-label="Dodaj u korpu"
                   >
                     <Plus size={18} strokeWidth={2.5} />

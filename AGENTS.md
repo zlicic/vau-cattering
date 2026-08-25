@@ -1,3 +1,7 @@
+## Rules
+
+- **No automatic commits or pushes.** PI must not create git commits or push to remote repositories unless user explicitly asks for it.
+
 ## Development
 
 When starting the dev server, use background mode:
