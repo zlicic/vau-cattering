@@ -79,7 +79,7 @@ export default function MenuCatalog({ items, categories }: MenuCatalogProps) {
           placeholder="Pretraži ponudu..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-11 pr-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-burgundy/20 focus:border-burgundy/20 transition-all"
+          className="w-full pl-11 pr-4 py-3.5 bg-sand border border-border rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold/20 transition-all"
         />
       </div>
 
@@ -92,13 +92,13 @@ export default function MenuCatalog({ items, categories }: MenuCatalogProps) {
               onClick={() => handleCategoryChange(tab.id)}
               className={`relative px-5 py-3 font-display text-sm uppercase tracking-wider whitespace-nowrap transition-colors ${
                 activeCategory === tab.id
-                  ? 'text-burgundy'
+                  ? 'text-gold'
                   : 'text-muted hover:text-ink'
               }`}
             >
               {tab.name}
               {activeCategory === tab.id && (
-                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-burgundy rounded-full" />
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold rounded-full" />
               )}
             </button>
           ))}
@@ -112,8 +112,8 @@ export default function MenuCatalog({ items, categories }: MenuCatalogProps) {
             onClick={() => setActiveSubcategory('all')}
             className={`px-3 py-1.5 rounded-lg font-body text-xs font-medium transition-colors ${
               activeSubcategory === 'all'
-                ? 'bg-burgundy text-white'
-                : 'bg-surface text-ink-light hover:bg-cream'
+                ? 'bg-gold text-burgundy-dark'
+                : 'bg-sand text-ink-light hover:bg-warm'
             }`}
           >
             Sve
@@ -124,8 +124,8 @@ export default function MenuCatalog({ items, categories }: MenuCatalogProps) {
               onClick={() => setActiveSubcategory(sub.id)}
               className={`px-3 py-1.5 rounded-lg font-body text-xs font-medium transition-colors ${
                 activeSubcategory === sub.id
-                  ? 'bg-burgundy text-white'
-                  : 'bg-surface text-ink-light hover:bg-cream'
+                  ? 'bg-gold text-burgundy-dark'
+                  : 'bg-sand text-ink-light hover:bg-warm'
               }`}
             >
               {sub.name}
@@ -149,10 +149,10 @@ export default function MenuCatalog({ items, categories }: MenuCatalogProps) {
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="group flex gap-5 bg-surface rounded-xl p-4 border border-black/5 hover:shadow-lg hover:border-black/10 transition-all duration-300 cursor-pointer"
+              className="group flex gap-5 bg-white rounded-xl p-4 border border-border hover:shadow-lg hover:border-border transition-all duration-300 cursor-pointer"
               onClick={() => setModalItem(item)}
             >
-              <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-lg overflow-hidden bg-cream flex-shrink-0">
+              <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-lg overflow-hidden bg-sand flex-shrink-0">
                 <img
                   src={cloudinaryUrl(item.image, 400)}
                   alt={item.name}
@@ -163,10 +163,10 @@ export default function MenuCatalog({ items, categories }: MenuCatalogProps) {
               <div className="flex-1 min-w-0 flex flex-col justify-between py-1">
                 <div>
                   <div className="flex items-start justify-between gap-3 mb-1">
-                    <h3 className="font-display text-lg text-ink leading-tight group-hover:text-burgundy transition-colors">
+                    <h3 className="font-display text-lg text-ink leading-tight group-hover:text-gold transition-colors">
                       {item.name}
                     </h3>
-                    <span className="font-display text-lg text-burgundy whitespace-nowrap">
+                    <span className="font-display text-lg text-gold whitespace-nowrap">
                       {item.price.toLocaleString('sr-RS')} RSD
                       <span className="text-sm text-muted font-body"> /{item.unit}</span>
                     </span>
@@ -184,7 +184,7 @@ export default function MenuCatalog({ items, categories }: MenuCatalogProps) {
                       e.stopPropagation();
                       setModalItem(item);
                     }}
-                    className="w-9 h-9 rounded-full bg-burgundy text-white flex items-center justify-center hover:bg-burgundy-dark transition-colors shadow-sm"
+                    className="w-9 h-9 rounded-full bg-gold text-burgundy-dark flex items-center justify-center hover:bg-gold-dark transition-colors shadow-sm"
                     aria-label="Dodaj u korpu"
                   >
                     <Plus size={18} strokeWidth={2.5} />

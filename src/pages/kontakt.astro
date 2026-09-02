@@ -5,16 +5,16 @@ import { Phone, MapPin, Clock, Mail, Instagram, Facebook, MessageCircle } from '
 ---
 
 <Layout title="Kontakt">
-  <section class="relative bg-ink text-white py-20 md:py-24 overflow-hidden -mt-[4.5rem] pt-[4.5rem]">
+  <section class="relative bg-ink text-white min-h-[360px] flex items-center py-20 md:py-24 overflow-hidden">
     <div class="absolute inset-0">
       <img
         src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80"
         alt="Restoran"
         class="w-full h-full object-cover opacity-25"
       />
-      <div class="absolute inset-0 bg-ink/80" />
+      <div class="absolute inset-0 bg-burgundy-dark/85" />
     </div>
-    <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+    <div class="max-w-6xl mx-auto px-4 text-left md:text-center relative z-10">
       <h1 class="font-display text-5xl md:text-6xl mb-3">Kontakt</h1>
       <p class="font-body text-white/70 text-lg">Sva vaša pitanja i porudžbine su dobrodošla</p>
     </div>
@@ -25,60 +25,50 @@ import { Phone, MapPin, Clock, Mail, Instagram, Facebook, MessageCircle } from '
       <div class="lg:col-span-2 space-y-10">
         <div>
           <h2 class="font-display text-2xl text-ink mb-8">Informacije</h2>
-          <div class="space-y-6">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-burgundy/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Phone size={20} className="text-burgundy" strokeWidth={1.5} />
-              </div>
+          <div>
+            <div class="flex items-start gap-4 border-b border-border pb-4 mb-4">
+              <Phone size={20} className="text-burgundy flex-shrink-0 mt-0.5" strokeWidth={1.5} />
               <div>
-                <p class="font-body text-xs text-muted uppercase tracking-wider mb-0.5">Telefon</p>
-                <a href={`tel:${BUSINESS.phone}`} class="font-body text-ink hover:text-sage transition-colors">
+                <p class="font-body text-muted text-xs uppercase tracking-wider mb-0.5">Telefon</p>
+                <a href={`tel:${BUSINESS.phone}`} class="font-body text-ink hover:text-burgundy transition-colors">
                   {BUSINESS.phone}
                 </a>
               </div>
             </div>
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <MessageCircle size={20} className="text-gold" strokeWidth={1.5} />
-              </div>
+            <div class="flex items-start gap-4 border-b border-border pb-4 mb-4">
+              <MessageCircle size={20} className="text-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
               <div>
-                <p class="font-body text-xs text-muted uppercase tracking-wider mb-0.5">WhatsApp</p>
+                <p class="font-body text-muted text-xs uppercase tracking-wider mb-0.5">WhatsApp</p>
                 <a
                   href={`https://wa.me/${BUSINESS.whatsappNumber}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="font-body text-ink hover:text-gold transition-colors"
+                  class="font-body text-ink hover:text-burgundy transition-colors"
                 >
                   {BUSINESS.phone}
                 </a>
               </div>
             </div>
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-burgundy/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Mail size={20} className="text-burgundy" strokeWidth={1.5} />
-              </div>
+            <div class="flex items-start gap-4 border-b border-border pb-4 mb-4">
+              <Mail size={20} className="text-burgundy flex-shrink-0 mt-0.5" strokeWidth={1.5} />
               <div>
-                <p class="font-body text-xs text-muted uppercase tracking-wider mb-0.5">Email</p>
-                <a href={`mailto:${BUSINESS.email}`} class="font-body text-ink hover:text-sage transition-colors">
+                <p class="font-body text-muted text-xs uppercase tracking-wider mb-0.5">Email</p>
+                <a href={`mailto:${BUSINESS.email}`} class="font-body text-ink hover:text-burgundy transition-colors">
                   {BUSINESS.email}
                 </a>
               </div>
             </div>
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <MapPin size={20} className="text-gold" strokeWidth={1.5} />
-              </div>
+            <div class="flex items-start gap-4 border-b border-border pb-4 mb-4">
+              <MapPin size={20} className="text-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
               <div>
-                <p class="font-body text-xs text-muted uppercase tracking-wider mb-0.5">Adresa</p>
+                <p class="font-body text-muted text-xs uppercase tracking-wider mb-0.5">Adresa</p>
                 <p class="font-body text-ink">{BUSINESS.address}</p>
               </div>
             </div>
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-burgundy/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Clock size={20} className="text-burgundy" strokeWidth={1.5} />
-              </div>
+              <Clock size={20} className="text-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
               <div>
-                <p class="font-body text-xs text-muted uppercase tracking-wider mb-0.5">Radno vreme</p>
+                <p class="font-body text-muted text-xs uppercase tracking-wider mb-0.5">Radno vreme</p>
                 <p class="font-body text-ink">{BUSINESS.hours}</p>
               </div>
             </div>
@@ -90,7 +80,7 @@ import { Phone, MapPin, Clock, Mail, Instagram, Facebook, MessageCircle } from '
 
       <div class="lg:col-span-3">
         <h2 class="font-display text-2xl text-ink mb-8">Lokacija</h2>
-        <div class="aspect-video bg-cream rounded-2xl border border-black/5 overflow-hidden">
+        <div class="aspect-video rounded-2xl shadow-lg overflow-hidden">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2806.488972680306!2d19.811005176845455!3d45.29854734447533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b114718f1b9cd%3A0xc434f0fc09ce8923!2sSvetlane%20Vrani%C4%87%2029%2C%20Novi%20Sad%2021127%2C%20Serbia!5e0!3m2!1sen!2shr!4v1787657070658!5m2!1sen!2shr"
             width="100%"

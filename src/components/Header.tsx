@@ -26,7 +26,7 @@ export default function Header() {
   }, []);
 
   const bgClass = scrolled
-    ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-black/5'
+    ? 'bg-white/95 backdrop-blur-md shadow-sm'
     : 'bg-transparent';
 
   const textClass = scrolled ? 'text-ink' : 'text-white';
@@ -37,11 +37,12 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${bgClass}`}
     >
       <div className='max-w-6xl mx-auto px-4 h-18 flex items-center justify-between'>
-        <a
-          href={BASE}
-          className={`font-display text-2xl font-bold tracking-widest ${logoClass} hover:opacity-80 transition-opacity`}
-        >
-          VAU KETERING
+        <a href={BASE} className='flex items-center'>
+          <img
+            src={`${BASE}logo.png`}
+            alt='VAU Ketering'
+            className='h-8 w-auto'
+          />
         </a>
 
         <nav className='hidden md:flex items-center gap-10'>
@@ -49,20 +50,20 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className={`font-body text-sm font-medium ${textClass} hover:text-burgundy transition-colors uppercase tracking-widest relative group`}
+              className={`font-body text-sm font-medium ${textClass} hover:opacity-70 transition-opacity relative group`}
             >
               {link.label}
-              <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-burgundy transition-all duration-300 group-hover:w-full' />
+              <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full' />
             </a>
           ))}
           <a
             href={`${BASE}korpa`}
-            className={`relative p-2 ${textClass} hover:text-burgundy transition-colors`}
+            className={`relative p-2 ${textClass} hover:opacity-70 transition-opacity`}
             aria-label='Korpa'
           >
             <ShoppingCart size={22} strokeWidth={1.5} />
             {mounted && totalItems > 0 && (
-              <span className='absolute -top-1 -right-1 bg-burgundy text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center'>
+              <span className='absolute -top-1 -right-1 bg-gold text-burgundy-dark text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center'>
                 {totalItems}
               </span>
             )}
@@ -77,7 +78,7 @@ export default function Header() {
           >
             <ShoppingCart size={22} strokeWidth={1.5} />
             {mounted && totalItems > 0 && (
-              <span className='absolute -top-1 -right-1 bg-burgundy text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center'>
+              <span className='absolute -top-1 -right-1 bg-gold text-burgundy-dark text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center'>
                 {totalItems}
               </span>
             )}
@@ -99,7 +100,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className='font-body text-sm font-medium text-ink hover:text-burgundy transition-colors uppercase tracking-widest py-2'
+              className='font-body text-sm font-medium text-ink hover:text-gold transition-colors py-2'
             >
               {link.label}
             </a>
