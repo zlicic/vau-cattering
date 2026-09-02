@@ -16,7 +16,7 @@ export default function CartSummary() {
   if (!mounted) {
     return (
       <div className='max-w-2xl mx-auto px-4 py-12 text-center'>
-        <div className='w-16 h-16 mx-auto mb-4 bg-cream rounded-full flex items-center justify-center animate-pulse'>
+        <div className='w-16 h-16 mx-auto mb-4 bg-sand rounded-full flex items-center justify-center animate-pulse'>
           <ShoppingCart size={28} className='text-muted' />
         </div>
         <p className='font-body text-muted'>Učitavanje korpe...</p>
@@ -27,7 +27,7 @@ export default function CartSummary() {
   if (items.length === 0) {
     return (
       <div className='max-w-2xl mx-auto px-4 py-16 text-center'>
-        <div className='w-16 h-16 mx-auto mb-4 bg-cream rounded-full flex items-center justify-center'>
+        <div className='w-16 h-16 mx-auto mb-4 bg-sand rounded-full flex items-center justify-center'>
           <ShoppingCart size={28} className='text-muted' />
         </div>
         <h2 className='font-display text-2xl text-ink mb-2'>Korpa je prazna</h2>
@@ -36,7 +36,7 @@ export default function CartSummary() {
         </p>
         <a
           href={`${import.meta.env.BASE_URL}ponuda`}
-          className='inline-flex items-center gap-2 px-6 py-3 bg-burgundy text-white font-display uppercase tracking-widest rounded-xl hover:bg-burgundy-dark transition-colors'
+          className='inline-flex items-center gap-2 px-6 py-3 bg-gold text-burgundy-dark font-display uppercase tracking-widest rounded-xl hover:bg-gold-dark transition-colors'
         >
           Pogledaj ponudu
         </a>
@@ -50,9 +50,9 @@ export default function CartSummary() {
         {items.map((item) => (
           <div
             key={item.id}
-            className='flex gap-4 bg-surface rounded-xl p-4 border border-black/5 shadow-sm'
+            className='flex gap-4 bg-white rounded-xl p-4 border border-border shadow-sm'
           >
-            <div className='w-20 h-20 rounded-lg overflow-hidden bg-cream flex-shrink-0'>
+            <div className='w-20 h-20 rounded-lg overflow-hidden bg-sand flex-shrink-0'>
               <img
                 src={item.image}
                 alt={item.name}
@@ -66,7 +66,7 @@ export default function CartSummary() {
                 </h3>
                 <button
                   onClick={() => removeItem(item.id)}
-                  className='p-1.5 text-muted hover:text-burgundy transition-colors flex-shrink-0 rounded-lg hover:bg-burgundy/5'
+                  className='p-1.5 text-muted hover:text-gold transition-colors flex-shrink-0 rounded-lg hover:bg-gold/5'
                   aria-label='Ukloni'
                 >
                   <Trash2 size={16} />
@@ -80,7 +80,8 @@ export default function CartSummary() {
                 <div className='flex items-center gap-2'>
                   <button
                     onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                    className='w-8 h-8 rounded-lg bg-cream flex items-center justify-center hover:bg-burgundy hover:text-white transition-colors'
+                    disabled={item.quantity <= 0}
+                    className='w-8 h-8 rounded-lg bg-sand flex items-center justify-center hover:bg-gold hover:text-burgundy-dark transition-colors disabled:opacity-30 disabled:cursor-not-allowed'
                   >
                     <Minus size={14} />
                   </button>
@@ -89,12 +90,12 @@ export default function CartSummary() {
                   </span>
                   <button
                     onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                    className='w-8 h-8 rounded-lg bg-cream flex items-center justify-center hover:bg-burgundy hover:text-white transition-colors'
+                    className='w-8 h-8 rounded-lg bg-sand flex items-center justify-center hover:bg-gold hover:text-burgundy-dark transition-colors'
                   >
                     <Plus size={14} />
                   </button>
                 </div>
-                <span className='font-display text-base text-burgundy'>
+                <span className='font-display text-base text-gold'>
                   {(item.price * item.quantity).toLocaleString('sr-RS')} RSD
                 </span>
               </div>
@@ -103,10 +104,10 @@ export default function CartSummary() {
         ))}
       </div>
 
-      <div className='border-t border-black/5 pt-6 mb-8'>
+      <div className='border-t border-border pt-6 mb-8'>
         <div className='flex items-center justify-between mb-2'>
           <span className='font-body text-sm text-ink-light'>Ukupno</span>
-          <span className='font-display text-2xl text-burgundy'>
+          <span className='font-display text-2xl text-gold'>
             {totalPrice.toLocaleString('sr-RS')} RSD
           </span>
         </div>
@@ -114,7 +115,7 @@ export default function CartSummary() {
 
       <a
         href={`${import.meta.env.BASE_URL}porudzbina`}
-        className='block w-full py-4 px-6 bg-burgundy text-white font-display text-lg uppercase tracking-widest text-center rounded-xl hover:bg-burgundy-dark transition-colors shadow-lg shadow-burgundy/15'
+        className='block w-full py-4 px-6 bg-gold text-burgundy-dark font-display text-lg uppercase tracking-widest text-center rounded-xl hover:bg-gold-dark transition-colors shadow-lg shadow-gold/15'
       >
         Nastavi na porudžbinu
       </a>

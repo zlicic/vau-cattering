@@ -29,7 +29,7 @@ export default function CheckoutForm() {
   if (!mounted) {
     return (
       <div className="max-w-2xl mx-auto px-4 py-12 text-center">
-        <div className="w-16 h-16 mx-auto mb-4 bg-cream rounded-full flex items-center justify-center animate-pulse">
+        <div className="w-16 h-16 mx-auto mb-4 bg-sand rounded-full flex items-center justify-center animate-pulse">
           <ShoppingCart size={28} className="text-muted" />
         </div>
         <p className="font-body text-muted">Učitavanje...</p>
@@ -40,14 +40,14 @@ export default function CheckoutForm() {
   if (items.length === 0) {
     return (
       <div className="max-w-2xl mx-auto px-4 py-16 text-center">
-        <div className="w-16 h-16 mx-auto mb-4 bg-cream rounded-full flex items-center justify-center">
+        <div className="w-16 h-16 mx-auto mb-4 bg-sand rounded-full flex items-center justify-center">
           <ShoppingCart size={28} className="text-muted" />
         </div>
         <h2 className="font-display text-2xl text-ink mb-2">Korpa je prazna</h2>
         <p className="font-body text-muted mb-6">Dodajte jela pre nego što nastavite.</p>
         <a
           href={`${import.meta.env.BASE_URL}ponuda`}
-          className="inline-flex items-center gap-2 px-6 py-3 bg-burgundy text-white font-display uppercase tracking-widest rounded-xl hover:bg-burgundy-dark transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-burgundy-dark font-display uppercase tracking-widest rounded-xl hover:bg-gold-dark transition-colors"
         >
           Pogledaj ponudu
         </a>
@@ -108,7 +108,7 @@ export default function CheckoutForm() {
   return (
     <div className="max-w-2xl mx-auto px-4">
       {/* Order summary */}
-      <div className="bg-surface rounded-xl p-6 mb-8 border border-black/5 shadow-sm">
+      <div className="bg-white rounded-xl p-6 mb-8 border border-border shadow-sm">
         <h2 className="font-display text-xl text-ink mb-4">Vaša porudžbina</h2>
         <div className="space-y-2 mb-4">
           {items.map((item) => (
@@ -124,7 +124,7 @@ export default function CheckoutForm() {
         </div>
         <div className="border-t border-black/5 pt-3 flex items-center justify-between">
           <span className="font-display text-lg text-ink">Ukupno</span>
-          <span className="font-display text-xl text-burgundy">{totalPrice.toLocaleString('sr-RS')} RSD</span>
+          <span className="font-display text-xl text-gold">{totalPrice.toLocaleString('sr-RS')} RSD</span>
         </div>
       </div>
 
@@ -138,11 +138,11 @@ export default function CheckoutForm() {
             id="name"
             type="text"
             {...register('name')}
-            className="w-full px-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-burgundy/20 focus:border-burgundy/20 transition-all"
+            className="w-full px-4 py-3.5 bg-sand border border-border rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold/20 transition-all"
             placeholder="Unesite vaše ime"
           />
           {errors.name && (
-            <p className="mt-1.5 flex items-center gap-1 font-body text-xs text-burgundy">
+            <p className="mt-1.5 flex items-center gap-1 font-body text-xs text-gold">
               <AlertCircle size={14} /> {errors.name.message}
             </p>
           )}
@@ -156,11 +156,11 @@ export default function CheckoutForm() {
             id="address"
             type="text"
             {...register('address')}
-            className="w-full px-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-burgundy/20 focus:border-burgundy/20 transition-all"
+            className="w-full px-4 py-3.5 bg-sand border border-border rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold/20 transition-all"
             placeholder="Unesite adresu"
           />
           {errors.address && (
-            <p className="mt-1.5 flex items-center gap-1 font-body text-xs text-burgundy">
+            <p className="mt-1.5 flex items-center gap-1 font-body text-xs text-gold">
               <AlertCircle size={14} /> {errors.address.message}
             </p>
           )}
@@ -174,11 +174,11 @@ export default function CheckoutForm() {
             id="phone"
             type="tel"
             {...register('phone')}
-            className="w-full px-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-burgundy/20 focus:border-burgundy/20 transition-all"
+            className="w-full px-4 py-3.5 bg-sand border border-border rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold/20 transition-all"
             placeholder="06x/xxx-xxxx"
           />
           {errors.phone && (
-            <p className="mt-1.5 flex items-center gap-1 font-body text-xs text-burgundy">
+            <p className="mt-1.5 flex items-center gap-1 font-body text-xs text-gold">
               <AlertCircle size={14} /> {errors.phone.message}
             </p>
           )}
@@ -193,7 +193,7 @@ export default function CheckoutForm() {
               id="companyName"
               type="text"
               {...register('companyName')}
-              className="w-full px-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-burgundy/20 focus:border-burgundy/20 transition-all"
+              className="w-full px-4 py-3.5 bg-sand border border-border rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold/20 transition-all"
               placeholder="Opciono"
             />
           </div>
@@ -205,7 +205,7 @@ export default function CheckoutForm() {
               id="companyId"
               type="text"
               {...register('companyId')}
-              className="w-full px-4 py-3.5 bg-surface border border-black/5 rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-burgundy/20 focus:border-burgundy/20 transition-all"
+              className="w-full px-4 py-3.5 bg-sand border border-border rounded-xl font-body text-sm text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold/20 transition-all"
               placeholder="Opciono"
             />
           </div>
@@ -213,7 +213,7 @@ export default function CheckoutForm() {
 
         <button
           type="submit"
-          className="w-full py-4 px-6 bg-burgundy text-white font-display text-lg uppercase tracking-widest rounded-xl hover:bg-burgundy-dark transition-colors flex items-center justify-center gap-2 shadow-lg shadow-burgundy/15"
+          className="w-full py-4 px-6 bg-gold text-burgundy-dark font-display text-lg uppercase tracking-widest rounded-xl hover:bg-gold-dark transition-colors flex items-center justify-center gap-2 shadow-lg shadow-gold/15"
         >
           <ArrowRight size={20} />
           Završi porudžbinu
@@ -232,7 +232,7 @@ export default function CheckoutForm() {
               <h3 className="font-display text-xl text-ink">Vaša porudžbina je spremna</h3>
               <button
                 onClick={() => setShowModal(false)}
-                className="p-2 rounded-lg hover:bg-cream transition-colors"
+                className="p-2 rounded-lg hover:bg-sand transition-colors"
                 aria-label="Zatvori"
               >
                 <X size={20} className="text-muted" />
@@ -243,7 +243,7 @@ export default function CheckoutForm() {
               Izaberite način slanja. Ako nemate WhatsApp na ovom uređaju, pošaljite email ili pozovite nas.
             </p>
 
-            <div className="bg-surface rounded-xl p-4 mb-5 border border-black/5">
+            <div className="bg-sand rounded-xl p-4 mb-5 border border-border">
               <pre className="font-body text-xs text-ink whitespace-pre-wrap break-words max-h-48 overflow-y-auto">
                 {orderMessage}
               </pre>
@@ -260,7 +260,7 @@ export default function CheckoutForm() {
 
               <button
                 onClick={handleEmail}
-                className="w-full py-3.5 px-4 bg-surface border border-black/10 text-ink font-display text-sm uppercase tracking-widest rounded-xl hover:bg-cream transition-colors flex items-center justify-center gap-2"
+                className="w-full py-3.5 px-4 bg-sand border border-border text-ink font-display text-sm uppercase tracking-widest rounded-xl hover:bg-warm transition-colors flex items-center justify-center gap-2"
               >
                 <Mail size={18} />
                 Pošalji email

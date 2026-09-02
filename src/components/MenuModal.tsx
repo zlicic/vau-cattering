@@ -27,19 +27,25 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
   const addItem = useCartStore((state) => state.addItem);
 
   useEffect(() => {
-    if (isOpen) setImageLoaded(false);
+    if (isOpen) {
+      setQuantity(1);
+      setImageLoaded(false);
+    }
   }, [isOpen, item.id]);
 
   if (!isOpen) return null;
 
   const handleAdd = () => {
-    addItem({
-      id: item.id,
-      name: item.name,
-      price: item.price,
-      image: item.image,
-      unit: item.unit,
-    });
+    addItem(
+      {
+        id: item.id,
+        name: item.name,
+        price: item.price,
+        image: item.image,
+        unit: item.unit,
+      },
+      quantity
+    );
     setQuantity(1);
     onClose();
   };
@@ -53,13 +59,13 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
       <div className='relative bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden'>
         <button
           onClick={onClose}
-          className='absolute top-3 right-3 p-2 bg-ink/80 text-white rounded-full hover:bg-burgundy transition-colors z-10'
+          className='absolute top-3 right-3 p-2 bg-ink/80 text-white rounded-full hover:bg-gold transition-colors z-10'
           aria-label='Zatvori'
         >
           <X size={18} />
         </button>
 
-        <div className='aspect-video w-full overflow-hidden bg-cream relative'>
+        <div className='aspect-video w-full overflow-hidden bg-sand relative'>
           {/* Blurred thumbnail — already cached from grid, shows instantly */}
           <img
             src={cloudinaryUrl(item.image, 400)}
@@ -82,13 +88,13 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
             {item.description}
           </p>
           {item.note && (
-            <p className='font-body text-xs text-burgundy mb-5 leading-relaxed bg-burgundy/5 rounded-lg px-3 py-2'>
+            <p className='font-body text-xs text-gold mb-5 leading-relaxed bg-gold-light rounded-lg px-3 py-2'>
               {item.note}
             </p>
           )}
 
           <div className='flex items-center justify-between mb-6'>
-            <span className='font-display text-2xl text-burgundy'>
+            <span className='font-display text-2xl text-gold'>
               {item.price.toLocaleString('sr-RS')} RSD
               <span className='text-base text-muted font-body'>
                 {' '}
@@ -102,7 +108,7 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
             <div className='flex items-center gap-2'>
               <button
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                className='w-10 h-10 rounded-xl bg-cream text-ink flex items-center justify-center hover:bg-burgundy hover:text-white transition-colors'
+                className='w-10 h-10 rounded-xl bg-sand text-ink flex items-center justify-center hover:bg-gold hover:text-burgundy-dark transition-colors'
               >
                 <Minus size={16} />
               </button>
@@ -111,7 +117,7 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
               </span>
               <button
                 onClick={() => setQuantity(quantity + 1)}
-                className='w-10 h-10 rounded-xl bg-cream text-ink flex items-center justify-center hover:bg-burgundy hover:text-white transition-colors'
+                className='w-10 h-10 rounded-xl bg-sand text-ink flex items-center justify-center hover:bg-gold hover:text-burgundy-dark transition-colors'
               >
                 <Plus size={16} />
               </button>
@@ -120,7 +126,7 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
 
           <button
             onClick={handleAdd}
-            className='w-full py-3.5 px-6 bg-burgundy text-white font-display text-lg uppercase tracking-widest rounded-xl hover:bg-burgundy-dark transition-colors flex items-center justify-center gap-2 shadow-lg shadow-burgundy/15'
+            className='w-full py-3.5 px-6 bg-gold text-burgundy-dark font-display text-lg uppercase tracking-widest rounded-xl hover:bg-gold-dark transition-colors flex items-center justify-center gap-2 shadow-lg shadow-gold/15'
           >
             <ShoppingCart size={20} />
             Dodaj u korpu
