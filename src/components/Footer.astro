@@ -1,48 +1,59 @@
 ---
 import { BUSINESS } from '../config/business';
-import { Phone, MapPin, Clock, Mail, Instagram, Facebook } from 'lucide-react';
+import { Phone, MapPin, Mail, Instagram, MessageCircle } from 'lucide-react';
 ---
 
-<footer class="bg-burgundy text-white/70 py-14">
-  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10">
-    <div>
-      <h3 class="font-display text-xl text-white mb-4 tracking-wider">VAU KETERING</h3>
-      <p class="font-body text-sm leading-relaxed text-white/50">
-        Ketering za sve prilike — roštilj, slana jela, torte i kolači za vaše proslave, poslovne ručkove i porodične događaje.
-      </p>
+<footer class="bg-burgundy text-white/60">
+  <div class="max-w-6xl mx-auto px-4 py-12 md:py-16 flex flex-col items-center gap-6">
+    <h4 class="font-display text-sm uppercase tracking-[0.2em] text-white/40">Kontakt</h4>
+    {/* Icons row */}
+    <div class="flex items-center justify-center gap-4">
+      <a
+        href={`tel:${BUSINESS.phone}`}
+        class="w-11 h-11 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 hover:text-white transition-colors"
+        aria-label="Pozovite nas"
+      >
+        <Phone size={18} strokeWidth={1.5} />
+      </a>
+      <a
+        href={`mailto:${BUSINESS.email}`}
+        class="w-11 h-11 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 hover:text-white transition-colors"
+        aria-label="Pošaljite email"
+      >
+        <Mail size={18} strokeWidth={1.5} />
+      </a>
+      <a
+        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(BUSINESS.address + ', Novi Sad, Serbia')}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-11 h-11 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 hover:text-white transition-colors"
+        aria-label="Prikaži na mapi"
+      >
+        <MapPin size={18} strokeWidth={1.5} />
+      </a>
+      <a
+        href={`https://wa.me/${BUSINESS.whatsappNumber}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-11 h-11 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 hover:text-white transition-colors"
+        aria-label="WhatsApp"
+      >
+        <MessageCircle size={18} strokeWidth={1.5} />
+      </a>
+      <a
+        href={BUSINESS.instagram}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-11 h-11 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 hover:text-white transition-colors"
+        aria-label="Instagram"
+      >
+        <Instagram size={18} strokeWidth={1.5} />
+      </a>
     </div>
-    <div>
-      <h4 class="font-display text-lg text-white mb-4">Kontakt</h4>
-      <ul class="space-y-3 font-body text-sm">
-        <li class="flex items-center gap-3">
-          <Phone size={16} className="flex-shrink-0" strokeWidth={1.5} />
-          <a href={`tel:${BUSINESS.phone}`} class="hover:text-white transition-colors">{BUSINESS.phone}</a>
-        </li>
-        <li class="flex items-center gap-3">
-          <Mail size={16} className=" flex-shrink-0" strokeWidth={1.5} />
-          <a href={`mailto:${BUSINESS.email}`} class="hover:text-white transition-colors">{BUSINESS.email}</a>
-        </li>
-        <li class="flex items-center gap-3">
-          <MapPin size={16} className=" flex-shrink-0" strokeWidth={1.5} />
-          <span>{BUSINESS.address}</span>
-        </li>
-        <li class="flex items-center gap-3">
-          <Clock size={16} className=" flex-shrink-0" strokeWidth={1.5} />
-          <span>{BUSINESS.hours}</span>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="font-display text-lg text-white mb-4">Pratite nas</h4>
-      <div class="flex gap-3">
-        <a href={BUSINESS.instagram} target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-burgundy hover:text-white transition-colors" aria-label="Instagram">
-          <Instagram size={18} strokeWidth={1.5} />
-        </a>
-       
-      </div>
-    </div>
-  </div>
-  <div class="max-w-6xl mx-auto px-4 mt-10 pt-8 border-t border-white/5 text-center font-body text-xs text-white/20">
-    © {new Date().getFullYear()} VAU Ketering. Sva prava zadržana.
+
+    {/* Copyright */}
+    <p class="font-body text-xs text-white/25 text-center">
+      © {new Date().getFullYear()} VAU Ketering. Sva prava zadržana.
+    </p>
   </div>
 </footer>

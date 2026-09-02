@@ -37,11 +37,12 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${bgClass}`}
     >
       <div className='max-w-6xl mx-auto px-4 h-18 flex items-center justify-between'>
-        <a
-          href={BASE}
-          className={`font-display text-2xl font-bold tracking-widest ${logoClass} hover:opacity-80 transition-opacity`}
-        >
-          VAU KETERING
+        <a href={BASE} className='flex items-center'>
+          <img
+            src={`${BASE}logo.png`}
+            alt='VAU Ketering'
+            className='h-8 w-auto'
+          />
         </a>
 
         <nav className='hidden md:flex items-center gap-10'>

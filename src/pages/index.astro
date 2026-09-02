@@ -10,7 +10,7 @@ const featuredItems = menuData.categories.flatMap(c =>
 
 <Layout title="Početna">
   {/* Hero with food image */}
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden -mt-[4.5rem] pt-[4.5rem]">
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
     {/* Background image */}
     <div class="absolute inset-0">
       <img
@@ -22,7 +22,7 @@ const featuredItems = menuData.categories.flatMap(c =>
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
     </div>
 
-    <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+    <div class="relative z-10 max-w-5xl mx-auto px-4 text-left md:text-center">
       <p class="animate-fade-up font-body text-white/70 text-xs uppercase tracking-[0.25em] mb-6">
         Ketering za sve prilike
       </p>
@@ -231,29 +231,4 @@ const featuredItems = menuData.categories.flatMap(c =>
     </div>
   </section>
 
-  {/* CTA */}
-  <section class="relative py-20 md:py-28 bg-burgundy text-white overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/20 via-transparent to-transparent" />
-    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-      <h2 class="font-display text-4xl md:text-5xl text-white mb-4">Spremni za porudžbinu?</h2>
-      <p class="font-body text-white/70 mb-10 max-w-xl mx-auto text-lg leading-relaxed">
-        Pogledajte našu ponudu, odaberite jela koja vam se dopadaju i naručite direktno preko WhatsApp-a.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href={`${import.meta.env.BASE_URL}ponuda`}
-          class="inline-flex items-center justify-center gap-2 px-10 py-4 bg-burgundy text-white font-display text-lg uppercase tracking-widest rounded-xl hover:bg-burgundy-dark transition-all duration-300 hover:scale-[1.02]"
-        >
-          Pogledaj ponudu
-          <ArrowRight size={20} />
-        </a>
-        <a
-          href={`${import.meta.env.BASE_URL}kontakt`}
-          class="inline-flex items-center justify-center gap-2 px-10 py-4 border border-white/30 text-white font-display text-lg uppercase tracking-widest rounded-xl hover:bg-white hover:text-ink transition-all duration-300"
-        >
-          Kontaktiraj nas
-        </a>
-      </div>
-    </div>
-  </section>
 </Layout>
