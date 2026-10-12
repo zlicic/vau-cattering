@@ -54,12 +54,15 @@ bun run dev
 bun run build
 ```
 
-## Deploy (Vercel)
+## Deploy
 
-1. Push to GitHub
-2. Connect repo on [vercel.com](https://vercel.com)
-3. Framework preset: Astro
-4. Merge to `main` → auto-deploy
+Deploys to GitHub Pages from the `main` branch:
+
+```bash
+bun run build
+```
+
+Upload the contents of `dist/` to your GitHub Pages branch, or use GitHub Actions to build and deploy automatically.
 
 ## Customizing
 
