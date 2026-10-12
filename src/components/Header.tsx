@@ -38,7 +38,7 @@ export default function Header() {
       <div className='max-w-6xl mx-auto px-4 h-18 flex items-center justify-between'>
         <a href={BASE} className='flex items-center'>
           <img
-            src={`${BASE}vau_logo.png`}
+            src={`${BASE}logo.png`}
             alt='VAU Ketering'
             className='h-22 w-auto'
           />
