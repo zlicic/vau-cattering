@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#F3EFE6"/>
+  <circle cx="400" cy="280" r="140" fill="none" stroke="#C9A84C" stroke-width="4"/>
+  <circle cx="400" cy="280" r="100" fill="none" stroke="#C9A84C" stroke-width="2" opacity="0.5"/>
+  <circle cx="360" cy="260" r="14" fill="#6B3446"/>
+  <circle cx="400" cy="300" r="14" fill="#6B3446"/>
+  <circle cx="440" cy="260" r="14" fill="#6B3446"/>
+  <text x="400" y="480" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#1F1418" font-weight="600">VAU Ketering</text>
+  <text x="400" y="520" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#9E958C">Slika uskoro</text>
+</svg>

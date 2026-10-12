@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X, Plus, Minus, ShoppingCart } from 'lucide-react';
-import { cloudinaryUrl } from '../lib/cloudinary';
+import { menuImageUrl } from '../lib/cloudinary';
 import { useCartStore } from '../store/cart';
 
 interface MenuItem {
@@ -68,14 +68,14 @@ export default function MenuModal({ item, isOpen, onClose }: MenuModalProps) {
         <div className='aspect-video w-full overflow-hidden bg-sand relative'>
           {/* Blurred thumbnail — already cached from grid, shows instantly */}
           <img
-            src={cloudinaryUrl(item.image, 400)}
+            src={menuImageUrl(item.image, 400)}
             alt=''
             className='absolute inset-0 w-full h-full object-cover '
             aria-hidden='true'
           />
           {/* Full image fades in when ready */}
           <img
-            src={cloudinaryUrl(item.image, 800)}
+            src={menuImageUrl(item.image, 800)}
             alt={item.name}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             onLoad={() => setImageLoaded(true)}

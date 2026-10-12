@@ -6,17 +6,9 @@ const BASE = import.meta.env.BASE_URL;
 ---
 
 <footer class="bg-burgundy-dark text-white/60">
-  <div class="max-w-7xl mx-auto px-4 py-12 md:py-16">
+  <div class="max-w-7xl mx-auto py-8">
     {/* Top section: Logo + Tagline + Contact Icons - All centered */}
-    <div class="flex flex-col items-center gap-6 mb-10">
-      <div class="flex flex-col items-center">
-
-        {/* Logo */}
-        <img src={`${BASE}logo.svg`} alt="VAU Ketering" class="h-20 w-auto" />
-        
-        {/* Tagline */}
-        <p class="text-white/80 text-sm">Ketering za sve prilike</p>
-      </div>
+    <div class="flex flex-col items-center gap-6 mb-6">
       
       {/* Contact Icons */}
       <div class="flex items-center gap-4">
@@ -65,7 +57,7 @@ const BASE = import.meta.env.BASE_URL;
     </div>
 
     {/* Copyright */}
-    <p class="text-white/30 text-xs text-center mt-10">
+    <p class="text-white/30 text-xs text-center">
       &copy; {new Date().getFullYear()} VAU Ketering. Sva prava zadržana.
     </p>
   </div>

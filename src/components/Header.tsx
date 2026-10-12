@@ -30,7 +30,6 @@ export default function Header() {
     : 'bg-transparent';
 
   const textClass = scrolled ? 'text-ink' : 'text-white';
-  const logoClass = scrolled ? 'text-burgundy' : 'text-white';
 
   return (
     <header
@@ -39,9 +38,9 @@ export default function Header() {
       <div className='max-w-6xl mx-auto px-4 h-18 flex items-center justify-between'>
         <a href={BASE} className='flex items-center'>
           <img
-            src={`${BASE}logo.svg`}
+            src={`${BASE}vau_logo.png`}
             alt='VAU Ketering'
-            className='h-14 w-auto'
+            className='h-22 w-auto'
           />
         </a>
 

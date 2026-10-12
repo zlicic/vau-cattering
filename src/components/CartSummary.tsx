@@ -1,6 +1,7 @@
 import { Minus, Plus, Trash2, ShoppingCart } from 'lucide-react';
 import { useCartStore } from '../store/cart';
 import { useState, useEffect } from 'react';
+import { menuImageUrl } from '../lib/cloudinary';
 
 export default function CartSummary() {
   const items = useCartStore((state) => state.items);
@@ -54,7 +55,7 @@ export default function CartSummary() {
           >
             <div className='w-20 h-20 rounded-lg overflow-hidden bg-sand flex-shrink-0'>
               <img
-                src={item.image}
+                src={menuImageUrl(item.image, 160)}
                 alt={item.name}
                 className='w-full h-full object-cover'
               />
