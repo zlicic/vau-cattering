@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Plus, Search } from 'lucide-react';
-import { cloudinaryUrl } from '../lib/cloudinary';
+import { menuImageUrl } from '../lib/cloudinary';
 import MenuModal from './MenuModal';
 
 interface MenuItem {
@@ -154,7 +154,7 @@ export default function MenuCatalog({ items, categories }: MenuCatalogProps) {
             >
               <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-lg overflow-hidden bg-sand flex-shrink-0">
                 <img
-                  src={cloudinaryUrl(item.image, 400)}
+                  src={menuImageUrl(item.image, 400)}
                   alt={item.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"

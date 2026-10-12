@@ -14,7 +14,7 @@
               "description": "Hrskave domaće kiflice punjene šunkom i sirom. Idealne za proslave i finger food.",
               "price": 1400,
               "unit": "kg",
-              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1791828189/kiflice_sunka_sir_usjgyp.jpg",
               "tags": ["popularno"]
             },
             {
@@ -23,7 +23,7 @@
               "description": "Male pizze sa šunkom i sirom. Omiljene na svim proslavama.",
               "price": 1700,
               "unit": "kg",
-              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1787671771/mini_pice_jgkd10.jpg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1791828183/mini_pice_z0uffi.jpg",
               "tags": ["popularno"]
             },
             {
@@ -40,7 +40,7 @@
               "description": "Sočni mini burgeri sa sirom. Pravi izbor za goste svih uzrasta.",
               "price": 2100,
               "unit": "kg",
-              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg"
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1791828186/mini_burgeri_sa_sirom_wnr6zd.jpg"
             },
             {
               "id": "fiseci-sunka-krem-sir",
@@ -56,7 +56,7 @@
               "description": "Mini hotdog sa viršlom. Klasika koja se uvek traži.",
               "price": 1500,
               "unit": "kg",
-              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1791828175/mini_hotdog_kobasica_gwrwjw.jpg",
               "tags": ["popularno"]
             },
             {
@@ -73,7 +73,7 @@
               "description": "Hrskava pohovana palačinka punjena mesom. Neodoljivo hrskava.",
               "price": 2200,
               "unit": "kg",
-              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg"
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1791828180/pohovana_palacinka_sa_mesom_xweqcn.jpg"
             }
           ]
         },
@@ -157,7 +157,7 @@
               "description": "Takitosi sa sirom. Vegetarijanska opcija punog ukusa.",
               "price": 1650,
               "unit": "kg",
-              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1791828186/takosi_sa_sirom_zsj0hn.jpg",
               "tags": ["vegetarijansko"]
             }
           ]
@@ -289,7 +289,7 @@
               "description": "Praktičan miks zalogaja za 5 do 7 osoba. Idealno za manje proslave.",
               "price": 2500,
               "unit": "kom",
-              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1791828193/miks_zalogaja_puygft.jpg",
               "tags": ["komplet"]
             },
             {
@@ -319,7 +319,7 @@
               "description": "Male pizze sa šunkom i sirom. Uvek hit među decom.",
               "price": 1700,
               "unit": "kg",
-              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1791828183/mini_pice_z0uffi.jpg",
               "tags": ["deciji-favorit", "popularno"]
             },
             {
@@ -328,7 +328,7 @@
               "description": "Hrskave kiflice punjene šunkom i sirom. Voli ih svako dete.",
               "price": 1400,
               "unit": "kg",
-              "image": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+              "image": "https://res.cloudinary.com/gvn6v5d8/image/upload/v1791828190/kiflice_lgjuvy.jpg",
               "tags": ["deciji-favorit"]
             },
             {

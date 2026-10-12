@@ -28,3 +28,11 @@ export function cloudinaryUrl(
   const transforms = buildTransforms(width, options);
   return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${transforms}/${image}`;
 }
+
+export const DEFAULT_MENU_IMAGE = `${import.meta.env.BASE_URL}missing-food.svg`;
+
+export function menuImageUrl(image: string, width?: number): string {
+  const isMissing = !image || image.includes('demo/image/upload/sample.jpg');
+  if (isMissing) return DEFAULT_MENU_IMAGE;
+  return cloudinaryUrl(image, width);
+}
